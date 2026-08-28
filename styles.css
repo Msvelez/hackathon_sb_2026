@@ -585,8 +585,7 @@ p {
 
 .campaign-footer {
     width: 100%;
-    height: min(70vh, 760px);
-    min-height: 420px;
+    height: 100vh;
     overflow: hidden;
     background: #000;
     border-top: 1px solid var(--glass-border);
@@ -841,7 +840,9 @@ p {
     }
 
     .campaign-footer {
+        height: 100vh;
         height: min(40vh, 380px);
+        width: 100%;
         min-height: 220px;
     }
 }
