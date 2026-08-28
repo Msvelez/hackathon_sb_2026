@@ -556,3 +556,173 @@ p {
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+/* --- TABLETS / LAPTOPS PEQUEÑOS (<= 1024px) --- */
+@media (max-width: 1024px) {
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+
+    .hero-text-box {
+        order: 2;
+    }
+
+    .hero-avatar-box {
+        order: 1;
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .scroll-hint {
+        justify-content: center;
+    }
+
+    h1 { font-size: 2.75rem; }
+    h2 { font-size: 2rem; }
+
+    .persona-layout-extended .persona-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .persona-photo-card {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
+/* --- TABLETS / MÓVIL GRANDE (<= 768px) --- */
+@media (max-width: 768px) {
+    .glass-nav {
+        padding: 0 5%;
+        height: 70px;
+    }
+
+    .storytelling-container {
+        margin-top: 70px;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .logo span {
+        display: none;
+    }
+
+    .nav-indicator span {
+        display: none;
+    }
+
+    .story-slide {
+        padding: 60px 6%;
+        min-height: auto;
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.7rem; }
+    h3 { font-size: 1.2rem; }
+
+    p { font-size: 1rem; }
+
+    .hero-text-box p { font-size: 1rem; margin-bottom: 30px; }
+
+    .section-title { margin-bottom: 40px; }
+
+    .empathy-grid-compact {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card-one {
+        left: 0;
+        top: auto;
+        bottom: -15px;
+        font-size: 0.8rem;
+        padding: 8px 14px;
+    }
+
+    .strategy-card {
+        padding: 25px;
+    }
+
+    .mini-metrics {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .big-mockup-closure {
+        padding: 15px;
+    }
+
+    .video-container {
+        border-radius: 12px;
+    }
+
+    #slide-6 .strategy-card h2 {
+        font-size: 1.7rem;
+    }
+}
+
+/* --- MÓVILES PEQUEÑOS (<= 480px) --- */
+@media (max-width: 480px) {
+    .nav-indicator i {
+        font-size: 1rem;
+    }
+
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+
+    .badge-pill {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+
+    .hero-avatar-box {
+        max-width: 260px;
+    }
+
+    .avatar-image,
+    .floating-avatar {
+        max-width: 100%;
+    }
+
+    .strategy-card {
+        padding: 20px;
+    }
+
+    .icon-box {
+        width: 50px;
+        height: 50px;
+        font-size: 1.6rem;
+    }
+
+    .mini-metrics {
+        gap: 15px 25px;
+    }
+
+    .mini-metrics strong { font-size: 1.2rem; }
+
+    .photo-caption-overlay {
+        padding: 15px;
+    }
+
+    .persona-photo-card {
+        max-width: 260px;
+    }
+
+    #slide-6 .strategy-card h2 {
+        font-size: 1.5rem;
+    }
+}
