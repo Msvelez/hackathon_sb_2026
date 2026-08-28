@@ -78,9 +78,7 @@ span {
     left: 0;
     width: 100%;
     height: 80px;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--glass-border);
+    background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -507,3 +505,54 @@ p {
 
 .accent-green { border-color: rgba(34, 197, 94, 0.4); }
 .yellow-bg { background-color: rgba(251, 191, 36, 0.1); color: var(--accent-yellow); }
+
+/* --- SLIDE 5: CONTENEDOR DE VIDEO --- */
+.video-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.video-placeholder:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.video-placeholder span {
+    margin-top: 15px;
+    color: var(--text-muted);
+    font-weight: 300;
+}
+
+/* Para asegurar que el iframe o video ocupe todo el espacio si lo insertas */
+.video-container iframe, 
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+}
+
+/* Asegura que el h2 del factor diferencial tenga el tamaño correcto */
+#slide-6 .strategy-card h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
