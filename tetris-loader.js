@@ -247,18 +247,23 @@
         function hide() {
             if (hidden) return;
             hidden = true;
-            if (rafId) cancelAnimationFrame(rafId);
 
             var elapsed = Date.now() - startedAt;
             var wait = Math.max(0, MIN_SHOW_MS - elapsed);
 
+            // El juego sigue animando durante la espera y todo el fade;
+            // solo se detiene justo cuando el overlay se quita del DOM.
             setTimeout(function () {
                 overlay.classList.add("loader-hidden");
-                overlay.addEventListener("transitionend", function () {
+
+                var stop = function () {
+                    if (rafId) cancelAnimationFrame(rafId);
                     overlay.remove();
-                }, { once: true });
+                };
+
+                overlay.addEventListener("transitionend", stop, { once: true });
                 // Respaldo por si transitionend no dispara (pestaña oculta, etc.)
-                setTimeout(function () { if (overlay.parentNode) overlay.remove(); }, 800);
+                setTimeout(stop, 800);
             }, wait);
         }
 
