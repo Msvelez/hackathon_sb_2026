@@ -11,6 +11,17 @@
 </head>
 <body>
 
+    <!-- Loader de carga: bot jugando Tetris mientras carga la página -->
+    <div id="loader-overlay" class="loader-overlay" role="status" aria-live="polite" aria-label="Construyendo tu página">
+        <div class="loader-card">
+            <div id="tetris-grid" class="tetris-grid"></div>
+            <div class="loader-text">
+                <p class="loader-title">Construyendo tu página</p>
+                <p class="loader-subtitle">Un momento, siéntete libre de ver jugar al bot</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Fondo corporativo inmersivo con elementos animados -->
     <div class="bg-mesh">
         <div class="mesh-glow glow-1"></div>
@@ -233,5 +244,6 @@
         <video src="párchate.mp4" autoplay muted loop aria-label="Video final de la campaña Párchate"></video>
     </footer>
 
+    <script src="tetris-loader.js" defer></script>
 </body>
 </html>
