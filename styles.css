@@ -451,7 +451,7 @@ p {
     transform: translateY(-5px);
 }
 
-.big-mockup-closure img {
+.big-mockup-closure video {
     width: 100%;
     height: auto;
     max-width: 1200px;
