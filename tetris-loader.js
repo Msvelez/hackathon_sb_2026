@@ -10,6 +10,7 @@
     var COLUMNS = 8;
     var ROWS = 16;
     var SPEED_MS = 40;
+    var FALL_STEP = 2; // filas que avanza una pieza por frame al caer
     var MIN_SHOW_MS = 1400;
     var MAX_SHOW_MS = 6000;
 
@@ -147,10 +148,11 @@
             var shape = piece.rot[spot.rot];
             var tall = Math.max.apply(null, shape.map(function (c) { return c[1]; })) + 1;
 
-            for (var y = -tall; y <= spot.y; y++) {
+            for (var y = -tall; y < spot.y; y += FALL_STEP) {
                 if (y + tall <= 0) continue;
                 frames.push(stamp(board, shape, spot.x, y, piece.id, w));
             }
+            frames.push(stamp(board, shape, spot.x, spot.y, piece.id, w));
 
             board = stamp(board, shape, spot.x, spot.y, piece.id, w);
             if (shape.some(function (c) { return spot.y + c[1] < 0; })) alive = false;
