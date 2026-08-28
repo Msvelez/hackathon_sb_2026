@@ -9,6 +9,17 @@
     --glass-bg: rgba(255, 255, 255, 0.03);
     --glass-border: rgba(255, 255, 255, 0.08);
     --font-outfit: 'Outfit', sans-serif;
+
+    /* Paleta de las 7 piezas del loader Tetris */
+    --tetris-1: #22c55e;
+    --tetris-2: #fbbf24;
+    --tetris-3: #4ade80;
+    --tetris-4: #facc15;
+    --tetris-5: #86efac;
+    --tetris-6: #ffffff;
+    --tetris-7: #15803d;
+    --tetris-flash: #ffffff;
+    --tetris-dead: rgba(255, 255, 255, 0.25);
 }
 
 * {
@@ -832,5 +843,79 @@ p {
     .campaign-footer {
         height: min(40vh, 380px);
         min-height: 220px;
+    }
+}
+
+/* --- LOADER DE CARGA (TETRIS) --- */
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-dark);
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+.loader-overlay.loader-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 32px 40px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+}
+
+.tetris-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 10px);
+    gap: 2px;
+}
+
+.tetris-cell {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.loader-text {
+    text-align: center;
+}
+
+.loader-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+.loader-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 500px) {
+    .loader-card {
+        padding: 24px 28px;
+        gap: 16px;
+    }
+
+    .tetris-grid {
+        grid-template-columns: repeat(8, 8px);
+    }
+
+    .tetris-cell {
+        width: 8px;
+        height: 8px;
     }
 }
