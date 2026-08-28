@@ -104,7 +104,9 @@ span {
     left: 0;
     width: 100%;
     height: 80px;
-    background: transparent;
+    background: rgba(18, 20, 24, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -141,6 +143,32 @@ span {
 
 .animate-bounce {
     animation: bounce 2s infinite;
+}
+
+/* --- HEADER CON QR (SOLO ESCRITORIO) --- */
+.qr-header {
+    display: none;
+    width: 100%;
+    background-color: #f7f7f7;
+}
+
+.qr-header-image {
+    max-width: min(90%, 480px);
+    max-height: 70vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.15));
+}
+
+@media (min-width: 1025px) {
+    .qr-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 100px 5% 40px;
+    }
 }
 
 /* --- CONTENEDOR PRINCIPAL --- */
