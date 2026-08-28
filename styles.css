@@ -556,3 +556,59 @@ p {
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
+
+/* --- VIDEOS VERTICALES BAJO EL MOCKUP --- */
+.video-section-title {
+    max-width: 1080px;
+    margin: 60px auto 30px;
+}
+
+.video-section-title h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.video-card {
+    background: var(--card-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.video-preview {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-preview video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.video-card-info {
+    padding: 20px;
+}
+
+.video-card-info h3 {
+    margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+        max-width: 340px;
+        gap: 20px;
+    }
+}
